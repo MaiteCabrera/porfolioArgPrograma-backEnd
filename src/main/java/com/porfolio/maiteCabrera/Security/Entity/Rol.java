@@ -1,6 +1,5 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ revisado
  */
 package com.porfolio.maiteCabrera.Security.Entity;
 
@@ -15,25 +14,22 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 public class Rol {
-    
     @Id
-    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
     @NotNull
-    @Enumerated(EnumType.STRING) /*anotaishion define los valores que van a ingresar, de tipo string*/
+    @Enumerated(EnumType.STRING)
     private RolNombre rolNombre;
     
-    //Contructor 
-    //no pongo el del ID porque se esta generando
-    public Rol( RolNombre rolNombre) {
-        this.rolNombre = rolNombre;
-    }
-
+    //Constructor
     public Rol() {
     }
+
+    public Rol(RolNombre rolNombre) {
+        this.rolNombre = rolNombre;
+    }
     
-    //Getter & Setter 
+    //Getter y Setter
 
     public int getId() {
         return id;
@@ -50,5 +46,6 @@ public class Rol {
     public void setRolNombre(RolNombre rolNombre) {
         this.rolNombre = rolNombre;
     }
+    
     
 }

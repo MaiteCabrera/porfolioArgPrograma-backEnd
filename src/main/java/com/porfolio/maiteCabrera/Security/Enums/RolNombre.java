@@ -1,12 +1,9 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+revisado
  */
 package com.porfolio.maiteCabrera.Security.Enums;
 
 
 public enum RolNombre {
-    
     ROLE_ADMIN, ROLE_USER
-    
 }

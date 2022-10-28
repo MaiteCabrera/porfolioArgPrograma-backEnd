@@ -1,7 +1,9 @@
-/*
+/* revisado
 Se encarga de tener toda la seguridad e implementa la interfaz 
  */
 package com.porfolio.maiteCabrera.Security.Entity;
+
+
 
 import java.util.Collection;
 import java.util.List;
@@ -9,6 +11,7 @@ import java.util.stream.Collectors;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
 
 public class UsuarioPrincipal implements UserDetails {
 
@@ -18,7 +21,7 @@ public class UsuarioPrincipal implements UserDetails {
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
 
-    //Constructor 
+    //Constructor
     public UsuarioPrincipal(String nombre, String nombreUsuario, String email, String password, Collection<? extends GrantedAuthority> authorities) {
         this.nombre = nombre;
         this.nombreUsuario = nombreUsuario;
@@ -27,17 +30,14 @@ public class UsuarioPrincipal implements UserDetails {
         this.authorities = authorities;
     }
 
-    public UsuarioPrincipal() {
-    }
-
-    //Método constructor de usuario
     public static UsuarioPrincipal build(Usuario usuario) {
         List<GrantedAuthority> authorities = usuario.getRoles().stream()
-                .map(rol -> new SimpleGrantedAuthority(rol.getRolNombre().name())).collect(Collectors.toList());
-        return new UsuarioPrincipal(usuario.getNombre(), usuario.getNombreUsuario(), usuario.getPassword(), usuario.getNombre(), authorities);
+                .map(rol -> new SimpleGrantedAuthority(rol.getRolNombre().name())).collect(Collectors
+                .toList());
+        return new UsuarioPrincipal(usuario.getNombre(), usuario.getNombreUsuario(), usuario.getEmail(),
+                 usuario.getPassword(), authorities);
     }
 
-    //métodos abstractos 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return authorities;
@@ -61,7 +61,7 @@ public class UsuarioPrincipal implements UserDetails {
         return nombreUsuario;
     }
 
-    @Override   //booleanos 
+    @Override
     public boolean isAccountNonExpired() {
         return true;
     }

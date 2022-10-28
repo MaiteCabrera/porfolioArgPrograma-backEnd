@@ -1,23 +1,17 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+revisado
  */
 package com.porfolio.maiteCabrera.Security.Dto;
 
 import javax.validation.constraints.NotBlank;
 
-
-
 public class LoginUsuario {
-    
     @NotBlank
     private String nombreUsuario;
-    
     @NotBlank
     private String password;
     
-    
-    //Getters ans Setters
+    //Getter & Setter
 
     public String getNombreUsuario() {
         return nombreUsuario;
@@ -34,6 +28,5 @@ public class LoginUsuario {
     public void setPassword(String password) {
         this.password = password;
     }
-    
     
 }

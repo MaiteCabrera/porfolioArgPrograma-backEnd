@@ -1,5 +1,5 @@
 /*
-
+revisado
  */
 package com.porfolio.maiteCabrera.Security.Repository;
 
@@ -11,7 +11,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface iRolRepository extends JpaRepository<Rol, Integer>{
-    
     Optional<Rol> findByRolNombre(RolNombre rolNombre);
-    
 }

@@ -1,17 +1,12 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+revisado
  */
 package com.porfolio.maiteCabrera.Security.Controller;
 
-
-
 public class Mensaje {
-    
-    
     private String mensaje;
     
-    //Constructores 
+    //Constructor
 
     public Mensaje() {
     }
@@ -19,8 +14,8 @@ public class Mensaje {
     public Mensaje(String mensaje) {
         this.mensaje = mensaje;
     }
+    //Getter y Setter
 
-    //Getter & Setters
     public String getMensaje() {
         return mensaje;
     }

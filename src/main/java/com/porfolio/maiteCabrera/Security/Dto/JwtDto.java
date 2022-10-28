@@ -1,6 +1,5 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+revisado
  */
 package com.porfolio.maiteCabrera.Security.Dto;
 
@@ -9,19 +8,12 @@ import org.springframework.security.core.GrantedAuthority;
 
 
 public class JwtDto {
-    
     private String token;
-    
     private String bearer = "Bearer";
-    
     private String nombreUsuario;
+    private Collection<? extends GrantedAuthority> authorities;
     
-    private Collection<? extends GrantedAuthority> authorities; 
-    
-    //Constructores 
-
-    public JwtDto() {
-    }
+    //Constructor
 
     public JwtDto(String token, String nombreUsuario, Collection<? extends GrantedAuthority> authorities) {
         this.token = token;
@@ -63,7 +55,5 @@ public class JwtDto {
         this.authorities = authorities;
     }
     
-    
 }
-
 

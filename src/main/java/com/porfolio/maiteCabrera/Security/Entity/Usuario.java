@@ -1,6 +1,5 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+revisado
  */
 package com.porfolio.maiteCabrera.Security.Entity;
 
@@ -23,29 +22,23 @@ Esta clase accede directamente a la base de datos.
 
 @Entity
 public class Usuario {
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
     @NotNull
     private String nombre;
-    
     @NotNull
     @Column(unique = true)
     private String nombreUsuario;
-    
     @NotNull
     private String email;
-    
     @NotNull
     private String password;
-    
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
+    @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name ="usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
     private Set<Rol> roles = new HashSet<>();
     
-    //Constructores 
+    //Constructores
 
     public Usuario() {
     }
@@ -57,7 +50,7 @@ public class Usuario {
         this.password = password;
     }
     
-    //Getter & Setters
+    //Getter Y Setter
 
     public int getId() {
         return id;
@@ -106,6 +99,5 @@ public class Usuario {
     public void setRoles(Set<Rol> roles) {
         this.roles = roles;
     }
-    
     
 }
