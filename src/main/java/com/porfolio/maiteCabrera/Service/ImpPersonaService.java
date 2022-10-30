@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.porfolio.maiteCabrera.Service;
 
 import com.porfolio.maiteCabrera.Entity.Persona;
@@ -28,15 +24,16 @@ public class ImpPersonaService implements IPersonaService{
     }
 
     @Override
-    public void deletePersona(Long id) {
+    public void deletePersona(Integer id) { /*este error me tira porque cambie el dato del id por integer en persona.java*/
         ipersonaRepository.deleteById(id);
     }
 
     @Override
-    public Persona findPersona(Long id) {
+    public Persona findPersona(Integer id) {
         Persona persona = ipersonaRepository.findById(id).orElse(null);
         return persona;
     }
-    
-    
+
+   
+
 }
