@@ -17,12 +17,6 @@ public class Persona {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-
-    
-    
-    
-    
-    
     @NotNull
     @Size(min = 1, max = 50, message = "No cumple con la longitud")
     private String nombre;
