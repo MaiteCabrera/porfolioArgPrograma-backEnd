@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 public class ImpPersonaService implements IPersonaService{
     @Autowired IPersonaRepository ipersonaRepository;
     
-    //Métodos
     @Override
     public List<Persona> getPersona() {
         List<Persona> persona = ipersonaRepository.findAll();
@@ -24,7 +23,7 @@ public class ImpPersonaService implements IPersonaService{
     }
 
     @Override
-    public void deletePersona(Integer id) { /*este error me tira porque cambie el dato del id por integer en persona.java*/
+    public void deletePersona(Integer id) {
         ipersonaRepository.deleteById(id);
     }
 
@@ -33,7 +32,5 @@ public class ImpPersonaService implements IPersonaService{
         Persona persona = ipersonaRepository.findById(id).orElse(null);
         return persona;
     }
-
-   
-
+    
 }
